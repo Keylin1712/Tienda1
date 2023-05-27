@@ -1,0 +1,31 @@
+/*Esto es un comentario*/
+
+* {
+    background-color: bisque;
+    font-family: sans-serif;
+}
+
+section p {
+    background-color: green;
+    color: yellow;
+}
+
+h1,h2 {
+    text-align: center;
+}
+
+h1 {
+    background-color: black;
+    color: white;
+}
+
+h2 {
+    background-color: brown;
+    color: green;
+}
+
+footer {
+    text-align: center;
+    background-color: blueviolet;
+    color: white; 
+}
