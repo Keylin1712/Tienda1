@@ -29,3 +29,14 @@ footer {
     background-color: blueviolet;
     color: white; 
 }
+
+nav a {
+    text-decoration: none;
+    background-color: blue;
+    color: white;
+}
+
+nav a:hover {
+    background-color: yellow;
+    color: red;
+}
