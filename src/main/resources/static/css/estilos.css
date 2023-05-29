@@ -1,6 +1,12 @@
 /*Esto es un comentario*/
 
 * {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 80px 20px 0;
     background-color: bisque;
     font-family: sans-serif;
 }
@@ -27,7 +33,7 @@ h2 {
 footer {
     text-align: center;
     background-color: blueviolet;
-    color: white; 
+    color: white;
 }
 
 nav a {
@@ -39,4 +45,70 @@ nav a {
 nav a:hover {
     background-color: yellow;
     color: red;
+    font-size: 20px;
+    transition-delay: 0.2s;
+}
+
+thead tr {
+    background-color: black;
+    color: white;
+
+}
+
+tbody tr:nth-child(even) {
+    background-color: white;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: lightslategrey;
+}
+
+/*Definir el uso de etiquetas con "id", se debe usar una vez en una página*/
+
+#logo {
+    font-size: 22px;
+}
+
+/*Definir el uso de etiquetas con "class", se debe usar un vez en una página*/
+
+.aviso {
+    font-family: cursive;
+}
+
+.encabezado {
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+}
+
+.lateral {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    bottom: 20px;
+    width: 20%;
+    background-color: aquamarine;
+}
+
+.contenido {
+    position: fixed;
+    top: 80px;
+    left: 20%;
+    right: 0;
+    bottom: 20px;
+    background-color: bisque;
+    overflow-y: scroll;
+}
+
+.pie {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 20px;
+    background-color: black;
 }
