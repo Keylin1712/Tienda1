@@ -1,4 +1,4 @@
-package com.tienda1.domain;
+ package com.tienda1.domain;
 
 import jakarta.persistence.*;
 import java.io.Serializable;
