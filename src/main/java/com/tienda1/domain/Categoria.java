@@ -15,21 +15,17 @@ public class Categoria implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_categoria")
-      
+
     private Long idCategoria;
     private String descripcion;
-    private String ruta_imagen;
-    private String activo;
+    private String rutaImagen;
+    private boolean activo;
 
     public Categoria() {
     }
 
-    public Categoria(String descripcion, String activo) {
+    public Categoria(String descripcion, boolean activo) {
         this.descripcion = descripcion;
         this.activo = activo;
-    }   
-
-    public boolean isActivo() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    } 
 }

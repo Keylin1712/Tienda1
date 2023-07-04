@@ -6,11 +6,11 @@ CREATE SCHEMA techshop ;
 /*Se crea un usuario para la base de datos llamado "usuario_prueba" y tiene la contraseña "Usuario_Clave."*/
 create user 'usuario_prueba'@'%' identified by 'Usuar1o_Clave.';
 
-/*Se asignan los prvilegios sobre la base de datos TechShop al usuario creado */
+/*Se asignan los prvilegios sobr ela base de datos TechShop al usuario creado */
 grant all privileges on techshop.* to 'usuario_prueba'@'%';
 flush privileges;
 
-/*La tabla de categoria contiene categorias de productos*/
+/* la tabla de categoria contiene categorias de productos*/
 create table techshop.categoria (
   id_categoria INT NOT NULL AUTO_INCREMENT,
   descripcion VARCHAR(30) NOT NULL,
@@ -149,4 +149,4 @@ DEFAULT CHARACTER SET = utf8mb4;
 insert into techshop.rol (id_rol, nombre, id_usuario) values
  (1,'ROLE_ADMIN',1), (2,'ROLE_VENDEDOR',1), (3,'ROLE_USER',1),
  (4,'ROLE_VENDEDOR',2), (5,'ROLE_USER',2),
- (6,'ROLE_USER',3); 
+ (6,'ROLE_USER',3);

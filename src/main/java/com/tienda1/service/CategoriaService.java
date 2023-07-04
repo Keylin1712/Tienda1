@@ -7,7 +7,7 @@ public interface CategoriaService {
     
     //El siguiente método retorna una lisra con las categorías
    //Que están en la tabla categoría, todas o sólo las activas
-    public List<Categoria> getCategoria(boolean activos);
+    public List<Categoria> getCategorias(boolean activos);
     
     //Acá siguen los métodos para hacer un CRUD de la tabla categoría
 }

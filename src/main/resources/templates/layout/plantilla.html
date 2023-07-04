@@ -13,12 +13,12 @@
             <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
     </head>
     <body>
-        <header th:fragment="header" class="header"> /*Define un fragmento de plantilla en Thymeleaf que representa el encabezado de la página, y se le asigna la clase CSS "header" para aplicar estilos específicos a ese elemento.*/
-            <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0"> /*Crea una barra de navegación en Bootstrap con un esquema de color oscuro, sin espacio de relleno y que se expande en dispositivos pequeños.*/
-                <div class="container">/*Crea un contenedor centrado con un ancho máximo fijo en Bootstrap, utilizado para envolver y estructurar el contenido de una sección dentro de un diseño.*/
-                    <a th:href="@{/}" class="navbar-brand">[[#{aplicacion.titulo}]]</a> /*Crea un enlace en la barra de navegación que funciona como el logotipo o nombre de marca de la aplicación. Al hacer clic en el enlace, se redirige a la página principal del sitio web. El contenido del enlace representa el título de la aplicación, que puede variar según el idioma seleccionado en la internacionalización de la aplicación.*/
-                    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"> /*Crea un botón de despliegue en una barra de navegación de Bootstrap.*/
-                        <span class="navbar-toggler-icon"></span> /*Crea un ícono que se utiliza como el indicador visual del botón de despliegue en una barra de navegación de Bootstrap.*/
+        <header th:fragment="header" class="header">
+            <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0"> 
+                <div class="container">
+                    <a th:href="@{/}" class="navbar-brand">[[#{aplicacion.titulo}]]</a> 
+                    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span> 
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <ul class="navbar-nav">
