@@ -21,10 +21,10 @@ public class CategoriaController {
 
     @GetMapping("/listado")
     public String listado(Model model) {
-        var categorias = categoriaService.getCategorias(false); // Quitamos el parámetro "activos:"
-        model.addAttribute("categorias", categorias); // Corregimos el formato del método addAttribute
-        model.addAttribute("totalCategorias", categorias.size()); // Corregimos el formato del método addAttribute
-        return "/categoria/listado"; // Suponiendo que la vista se encuentra en la ruta "/categoria/listado"
+        var categorias = categoriaService.getCategorias(false);
+        model.addAttribute("categorias", categorias);
+        model.addAttribute("totalCategorias", categorias.size());
+        return "/categoria/listado";
     }
 
     @GetMapping("/nuevo")
@@ -37,7 +37,7 @@ public class CategoriaController {
 
     @PostMapping("/guardar")
     public String categoriaGuardar(Categoria categoria,
-              @RequestParam("imagenFile") MultipartFile imagenFile) {
+            @RequestParam("imagenFile") MultipartFile imagenFile) {
         if (!imagenFile.isEmpty()) {
             categoriaService.save(categoria);
             categoria.setRutaImagen(

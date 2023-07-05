@@ -1,4 +1,4 @@
- package com.tienda1.controller;
+package com.tienda1.controller;
 
 import com.tienda1.domain.Producto;
 import com.tienda1.service.ProductoService;
@@ -13,19 +13,20 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 @Controller
-@RequestMapping ("/producto")
+@RequestMapping("/producto")
 public class ProductoController {
-  
+
     @Autowired
     private ProductoService productoService;
-    @GetMapping ("/listado")
-    public String Listado(Model model){
-        var productos=productoService.getProductos (false);
-        model.addAttribute("productos",productos);
-        model.addAttribute("totalproductos",productos.size());
+
+    @GetMapping("/listado")
+    public String listado(Model model) {
+        var productos = productoService.getProductos(false);
+        model.addAttribute("productos", productos);
+        model.addAttribute("totalProductos", productos.size());
         return "/producto/listado";
-        
     }
+
     @GetMapping("/nuevo")
     public String productoNuevo(Producto producto) {
         return "/producto/modifica";
@@ -33,16 +34,16 @@ public class ProductoController {
 
     @Autowired
     private FirebaseStorageService firebaseStorageService;
-    
+
     @PostMapping("/guardar")
     public String productoGuardar(Producto producto,
-            @RequestParam("imagenFile") MultipartFile imagenFile) {        
+            @RequestParam("imagenFile") MultipartFile imagenFile) {
         if (!imagenFile.isEmpty()) {
             productoService.save(producto);
             producto.setRutaImagen(
                     firebaseStorageService.cargaImagen(
-                            imagenFile, 
-                            "producto", 
+                            imagenFile,
+                            "producto",
                             producto.getIdProducto()));
         }
         productoService.save(producto);
@@ -61,4 +62,4 @@ public class ProductoController {
         model.addAttribute("producto", producto);
         return "/producto/modifica";
     }
-} 
+}
