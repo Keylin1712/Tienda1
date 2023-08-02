@@ -10,7 +10,7 @@ public interface CategoriaService {
     public List<Categoria> getCategorias(boolean activos);
 
     //Acá siguen los métodos para hacer un CRUD de la tabla categoría
-// Se obtiene un Categoria, a partir del id de un categoria
+    // Se obtiene un Categoria, a partir del id de un categoria
     public Categoria getCategoria(Categoria categoria);
 
     // Se inserta un nuevo categoria si el id del categoria esta vacío
