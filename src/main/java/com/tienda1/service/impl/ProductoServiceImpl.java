@@ -1,4 +1,4 @@
- package com.tienda1.service.impl;
+package com.tienda1.service.impl;
 
 import com.tienda1.dao.ProductoDao;
 import com.tienda1.domain.Producto;
@@ -41,5 +41,25 @@ public class ProductoServiceImpl implements ProductoService {
     @Transactional
     public void delete(Producto producto) {
         productoDao.delete(producto);
+    }
+
+    //Se enuncia un método para recuperar los productos con una consulta amplia
+    @Override
+    @Transactional(readOnly = true)
+    public List<Producto> buscaProductoPorPrecioEntre(double precioInf, double precioSup) {
+        return productoDao.findByPrecioBetweenOrderByDescripcion(precioInf, precioSup);
+    }
+
+    //Se enuncia un método para recuperar los productos con una consulta JPQL
+    @Override
+    @Transactional(readOnly = true)
+    public List<Producto> metodoJPQL(double precioInf, double precioSup) {
+        return productoDao.metodoJPQL(precioInf, precioSup);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Producto> metodoNativo(double precioInf, double precioSup) {
+        return productoDao.metodoNativo(precioInf, precioSup);
     }
 }

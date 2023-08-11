@@ -1,4 +1,4 @@
- package com.tienda1.domain;
+package com.tienda1.domain;
 
 import jakarta.persistence.*;
 import java.io.Serializable;
@@ -15,7 +15,7 @@ public class Categoria implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id_categoria")
+    @Column(name = "id_categoria")
 
     private Long idCategoria;
     private String descripcion;
@@ -23,14 +23,14 @@ public class Categoria implements Serializable {
     private boolean activo;
 
     @OneToMany
-    @JoinColumn(name="id_categoria")
+    @JoinColumn(name = "id_categoria")
     List<Producto> productos;
-    
+
     public Categoria() {
     }
 
     public Categoria(String descripcion, boolean activo) {
         this.descripcion = descripcion;
         this.activo = activo;
-    } 
+    }
 }

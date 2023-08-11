@@ -15,7 +15,7 @@ public class Producto implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_producto")
-    
+
     private Long idProducto;
     private String descripcion;
     private String detalle;
@@ -25,9 +25,9 @@ public class Producto implements Serializable {
     private boolean activo;
 
     @ManyToOne
-    @JoinColumn(name="id_categoria")
+    @JoinColumn(name = "id_categoria")
     Categoria categoria;
-    
+
     public Producto() {
     }
 
