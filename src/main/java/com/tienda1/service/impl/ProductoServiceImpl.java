@@ -1,7 +1,7 @@
 package com.tienda1.service.impl;
 
-import com.tienda1.dao.ProductoDao;
 import com.tienda1.domain.Producto;
+import com.tienda1.dao.ProductoDao;
 import com.tienda1.service.ProductoService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,6 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class ProductoServiceImpl implements ProductoService {
 
-    //La anotación Autowired crea un único objeto sin hacer new... y se mantiene
     @Autowired
     private ProductoDao productoDao;
 
@@ -43,23 +42,19 @@ public class ProductoServiceImpl implements ProductoService {
         productoDao.delete(producto);
     }
 
-    //Se enuncia un método para recuperar los productos con una consulta amplia
+    // se implementa un método para recuperar los productos con una consulta ampliada
     @Override
-    @Transactional(readOnly = true)
-    public List<Producto> buscaProductoPorPrecioEntre(double precioInf, double precioSup) {
+    public List<Producto> buscaProductosPorPrecioEntre(double precioInf, double precioSup) {
         return productoDao.findByPrecioBetweenOrderByDescripcion(precioInf, precioSup);
     }
 
-    //Se enuncia un método para recuperar los productos con una consulta JPQL
     @Override
-    @Transactional(readOnly = true)
-    public List<Producto> metodoJPQL(double precioInf, double precioSup) {
-        return productoDao.metodoJPQL(precioInf, precioSup);
+    public List<Producto> consultaJPQL(double precioInf, double precioSup) {
+        return productoDao.consultaJPQL(precioInf, precioSup);
     }
 
     @Override
-    @Transactional(readOnly = true)
-    public List<Producto> metodoNativo(double precioInf, double precioSup) {
-        return productoDao.metodoNativo(precioInf, precioSup);
+    public List<Producto> consultaSQL(double precioInf, double precioSup) {
+        return productoDao.consultaSQL(precioInf, precioSup);
     }
 }

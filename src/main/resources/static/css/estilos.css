@@ -34,7 +34,6 @@ footer {
     text-align: center;
     background-color: blueviolet;
     color: black;
-
 }
 
 nav a {
@@ -53,25 +52,22 @@ nav a:hover {
 thead tr {
     background-color: black;
     color: grey;
-
 }
 
 tbody tr:nth-child(even) {
     background-color: green;
-
 }
+
 tbody tr:nth-child(odd) {
     background-color: greenyellow;
 }
 
 /*Definir el uso de etiquetas con "id", se debe usar una vez en una página*/
-
 #logo {
     font-size: 22px;
 }
 
 /*Definir el uso de etiquetas con "class", se debe usar un vez en una página*/
-
 .aviso {
     font-family: cursive;
 }

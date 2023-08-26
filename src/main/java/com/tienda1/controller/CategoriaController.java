@@ -5,12 +5,12 @@ import com.tienda1.service.CategoriaService;
 import com.tienda1.service.FirebaseStorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.ui.Model;
 
 @Controller
 @RequestMapping("/categoria")
@@ -23,8 +23,9 @@ public class CategoriaController {
     public String listado(Model model) {
         var categorias = categoriaService.getCategorias(false);
         model.addAttribute("categorias", categorias);
-        model.addAttribute("totalCategorias", categorias.size());
+        model.addAttribute("totalcategorias", categorias.size());
         return "/categoria/listado";
+
     }
 
     @GetMapping("/nuevo")
